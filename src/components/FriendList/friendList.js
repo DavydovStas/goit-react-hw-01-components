@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types'
+import s from './FreindsList.module.css'
 
 export default function FriendsList(props) { 
   const { friends } = props;
-  return (<ul class="friend-list">
+  return (<ul className={s.container} >
   {
       (friends.map((friend) => (
-        <li class="item" key={friend.name}>
+        <li className="item" key={friend.name}>
           <span className="status"
-            // backgroundColor = '#1ee352'
-            // isOnline={friend.isOnline} 
-          // style={backgroundColor: isOnline ? '#1ee352' : '#eb3915'}
+            style={{ backgroundColor: friend.isOnline ? '#1ee352' : '#eb3915' }}
           >
           </span>
           <img className="avatar" src={friend.avatar} alt={friend.name} width="48" />
@@ -21,5 +20,13 @@ export default function FriendsList(props) {
 }
 
 FriendsList.propType = { 
-  friends: PropTypes.array
+  friends: PropTypes.arrayOf(
+    PropTypes.exact(
+      {
+        avatar: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired,
+        isOnline: PropTypes.bool.isRequired,
+      })
+  )
 }
