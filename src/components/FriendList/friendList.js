@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types'
-import s from './FreindsList.module.css'
+import style from './FreindsList.module.css'
 
 export default function FriendsList(props) { 
   const { friends } = props;
-  return (<ul className={s.container} >
+  return (<ul className={style.friendsList} >
   {
       (friends.map((friend) => (
-        <li className="item" key={friend.name}>
-          <span className="status"
+        <li className={style.friendItem} key={friend.name}>
+          <span className={style.friendStatus}
             style={{ backgroundColor: friend.isOnline ? '#1ee352' : '#eb3915' }}
           >
           </span>

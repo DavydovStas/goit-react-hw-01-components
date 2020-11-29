@@ -1,0 +1,35 @@
+.profile {
+  display: inline-block;
+  padding: 20px;
+  margin-bottom: 50px;
+  max-width: 320px;
+
+  text-align: center;
+  background-color: grey;
+}
+
+.profileDescription {
+  max-width: 270px;
+  margin: 0px;
+
+  background-color: whitesmoke;
+}
+
+.profileAvatar {
+  width: 150px;
+  border-radius: 50px;
+}
+
+.profileStatsList {
+  display: flex;
+  list-style: none;
+  margin: 0px;
+  padding: 10px;
+  max-width: 250px;
+
+  background-color: whitesmoke;
+}
+
+.profileStatItem {
+  padding: 10px;
+}
